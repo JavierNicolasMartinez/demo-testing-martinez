@@ -8,6 +8,10 @@ app.get('/salud', (_req, res) => {
   res.json({ estado: 'ok' });
 });
 
+app.get('/healthy', (_req, res) => {
+  res.json({ estado: 'ok' });
+});
+
 app.post('/api/precios/calcular', (req, res) => {
   const { precio, descuento } = req.body ?? {};
   try {

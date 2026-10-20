@@ -9,6 +9,12 @@ describe('API de precios', () => {
     expect(respuesta.body).toEqual({ estado: 'ok' });
   });
 
+  it('responde al chequeo de salud indicado en la guía', async () => {
+    const respuesta = await request(app).get('/healthy');
+    expect(respuesta.status).toBe(200);
+    expect(respuesta.body).toEqual({ estado: 'ok' });
+  });
+
   it('calcula un precio mediante HTTP', async () => {
     const respuesta = await request(app)
       .post('/api/precios/calcular')
